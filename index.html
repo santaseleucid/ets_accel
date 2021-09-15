@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="comparison-container">
+      <div class="container">
+        <div class="filters">
+          <div class="select">
+            <label for="left-date">Date:</label>
+            <select
+              name="left-date"
+              id="left-date"
+              onchange="onLeftDateChange(this)"
+            >
+              <option value="2021-08-27">2021-08-27</option>
+              <option value="2021-09-11">2021-09-11</option>
+            </select>
+          </div>
+          <div class="select">
+            <label for="left-direction">Direction:</label>
+            <select
+              onchange="onLeftDirectionChange(this)"
+              name="left-direction"
+              id="left-direction"
+            >
+              <option value="sb">SB</option>
+              <option value="nb">NB</option>
+            </select>
+          </div>
+          <div class="select">
+            <label for="left-trip">Trip:</label>
+            <select
+              name="left-trip"
+              id="left-trip"
+              onchange="onLeftTripChange(this)"
+            >
+              <option value="Clareview_Belvedere">Clareview_Belvedere</option>
+              <option value="Belvedere_Coliseum">Belvedere_Coliseum</option>
+              <option value="Coliseum_Stadium">Coliseum_Stadium</option>
+              <option value="Stadium_Churchill">Stadium_Churchill</option>
+              <option value="Churchill_Central">Churchill_Central</option>
+              <option value="Central_Bay">Central_Bay</option>
+              <option value="Bay_Corona">Bay_Corona</option>
+              <option value="Corona_GovernmentCentre">
+                Corona_Government Centre
+              </option>
+              <option value="GovernmentCentre_University">
+                Government Centre_University
+              </option>
+              <option value="University_HealthSciences">
+                University_Health Sciences
+              </option>
+              <option value="HealthSciences_McKernan">
+                Health Sciences_McKernan
+              </option>
+              <option value="McKernan_SouthCampus">
+                McKernan_South Campus
+              </option>
+              <option value="South Campus_SouthgateTransitCentre">
+                South Campus_Southgate Transit Centre
+              </option>
+              <option value="SouthgateTransitCentre_CenturyPark">
+                Southgate Transit Centre_Century Park
+              </option>
+            </select>
+          </div>
+
+          <div class="select">
+            <label for="left-axis">Axis:</label>
+            <select
+              name="left-axis"
+              id="left-axis"
+              onchange="onLeftAxisChange(this)"
+            >
+              <option value="Z-Axis">Z-Axis</option>
+              <option value="Y-Axis">Y-Axis</option>
+              <option value="X-Axis">X-Axis</option>
+            </select>
+          </div>
+          <div class="select">
+            <label for="left-run">Run:</label>
+            <select
+              name="left-run"
+              id="left-run"
+              onchange="onLeftRunChange(this)"
+            >
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <!-- <div class="select">
+            <label for="left-unit">Unit:</label>
+            <select
+              name="left-unit"
+              id="left-unit"
+              onchange="onLeftUnitChange(this)"
+            >
+              <option value="1">1</option>
+            </select>
+          </div> -->
+          <hr />
+        </div>
+        <div id="left-raw-data"></div>
+        <div id="left-spec-data"></div>
+        <div id="left-rms-data"></div>
+        <div id="left-fft-data"></div>
+        <div id="left-ma-data"></div>
+      </div>
+
+      <!-------------->
+      <div class="container">
+        <div class="filters">
+          <div class="select">
+            <label for="right-date">Date:</label>
+            <select
+              name="right-date"
+              id="right-date"
+              onchange="onRightDateChange(this)"
+            >
+              <option value="2021-08-27">2021-08-27</option>
+              <option value="2021-09-11">2021-09-11</option>
+            </select>
+          </div>
+          <div class="select">
+            <label for="right-direction">Direction:</label>
+            <select
+              onchange="onRightDirectionChange(this)"
+              name="right-direction"
+              id="right-direction"
+            >
+              <option value="sb">SB</option>
+              <option value="nb">NB</option>
+            </select>
+          </div>
+          <div class="select">
+            <label for="right-trip">Trip:</label>
+            <select
+              name="right-trip"
+              id="right-trip"
+              onchange="onRightTripChange(this)"
+            >
+              <option value="Clareview_Belvedere">Clareview_Belvedere</option>
+              <option value="Belvedere_Coliseum">Belvedere_Coliseum</option>
+              <option value="Coliseum_Stadium">Coliseum_Stadium</option>
+              <option value="Stadium_Churchill">Stadium_Churchill</option>
+              <option value="Churchill_Central">Churchill_Central</option>
+              <option value="Central_Bay">Central_Bay</option>
+              <option value="Bay_Corona">Bay_Corona</option>
+              <option value="Corona_GovernmentCentre">
+                Corona_Government Centre
+              </option>
+              <option value="GovernmentCentre_University">
+                Government Centre_University
+              </option>
+              <option value="University_HealthSciences">
+                University_Health Sciences
+              </option>
+              <option value="HealthSciences_McKernan">
+                Health Sciences_McKernan
+              </option>
+              <option value="McKernan_SouthCampus">
+                McKernan_South Campus
+              </option>
+              <option value="South Campus_SouthgateTransitCentre">
+                South Campus_Southgate Transit Centre
+              </option>
+              <option value="SouthgateTransitCentre_CenturyPark">
+                Southgate Transit Centre_Century Park
+              </option>
+            </select>
+          </div>
+
+          <div class="select">
+            <label for="right-axis">Axis:</label>
+            <select
+              name="right-axis"
+              id="right-axis"
+              onchange="onRightAxisChange(this)"
+            >
+              <option value="Z-Axis">Z-Axis</option>
+              <option value="Y-Axis">Y-Axis</option>
+              <option value="X-Axis">X-Axis</option>
+            </select>
+          </div>
+          <div class="select">
+            <label for="right-run">Run:</label>
+            <select
+              name="right-run"
+              id="right-run"
+              onchange="onRightRunChange(this)"
+            >
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <!-- <div class="select">
+            <label for="right-unit">Unit:</label>
+            <select
+              name="right-unit"
+              id="right-unit"
+              onchange="onRightUnitChange(this)"
+            >
+              <option value="1">1</option>
+            </select>
+          </div> -->
+          <hr />
+        </div>
+        <div id="right-raw-data"></div>
+        <div id="right-spec-data"></div>
+        <div id="right-rms-data"></div>
+        <div id="right-fft-data"></div>
+        <div id="right-ma-data"></div>
+      </div>
+    </div>
+  </body>
+</html>

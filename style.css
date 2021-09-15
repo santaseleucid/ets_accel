@@ -1,0 +1,21 @@
+.comparison-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  width: 50%;
+}
+
+.select {
+  padding: 5px;
+}
+.filters {
+  position: sticky;
+  top: 0;
+  background-color: whitesmoke;
+}
+
+.charts {
+  overflow-y: auto;
+}
